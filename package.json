@@ -1,0 +1,24 @@
+{
+  "name": "@tradle/validate",
+  "version": "1.0.0",
+  "description": "validate models and resources",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tradle/validate"
+  },
+  "author": "mvayngrib",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test",
+    "lint": "eslint --quiet ."
+  },
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "object.pick": "^1.2.0",
+    "typeforce": "^1.10.6"
+  }
+}
