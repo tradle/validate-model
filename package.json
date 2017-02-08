@@ -13,8 +13,13 @@
     "test": "node test",
     "lint": "eslint --quiet ."
   },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "devDependencies": {
     "eslint": "^3.15.0",
+    "pre-commit": "^1.2.2",
     "tape": "^4.6.3"
   },
   "dependencies": {

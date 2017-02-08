@@ -8,7 +8,7 @@ const broken = [
         name: {}
       }
     },
-    property: 'name',
+    propertyName: 'name',
     error: /type/
   },
   {
@@ -19,7 +19,7 @@ const broken = [
         }
       }
     },
-    property: 'name',
+    propertyName: 'name',
     error: /type/
   },
   {
@@ -31,7 +31,7 @@ const broken = [
         }
       }
     },
-    property: 'name',
+    propertyName: 'name',
     error: /range/
   }
 ]
@@ -39,23 +39,13 @@ const broken = [
 const valid = [
 ]
 
-test('validate', function (t) {
+test('validate prop', function (t) {
   broken.forEach(bad => {
-    const result = validate({
-      model: bad.model,
-      propertyName: bad.property
-    })
-
-    t.ok(bad.error.test(result), result)
+    t.throws(() => validate(bad), bad.error)
   })
 
-  valid.forEach(bad => {
-    const result = validate({
-      model: good.model,
-      propertyName: good.property
-    })
-
-    t.equal(result, undefined)
+  valid.forEach(good => {
+    t.doesNotThrow(() => validate(good))
   })
 
   t.end()

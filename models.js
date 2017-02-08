@@ -1,7 +1,7 @@
 const validateModel = require('./lib/model')
 const validateReferences = require('./lib/refs')
 const validateProperty = require('./lib/property')
-const { find, updateErrorWithMessage, handleError } = require('./lib/utils')
+const { updateErrorWithMessage, handleError } = require('./lib/utils')
 
 exports = module.exports = validate
 exports.model = validateModel

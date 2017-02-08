@@ -15,10 +15,9 @@ const broken = [
   }
 ]
 
-test('validate', function (t) {
+test('validate model', function (t) {
   broken.forEach(bad => {
-    const result = validate(bad.model)
-    t.ok(bad.error.test(result), result)
+    t.throws(() => validate(bad.model), bad.error)
   })
 
   t.end()
