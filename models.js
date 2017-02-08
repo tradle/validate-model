@@ -22,12 +22,5 @@ function validate (models) {
     }
   })
 
-  models.forEach(model => {
-    try {
-      validateReferences({ models, model })
-    } catch (err) {
-      err = updateErrorWithMessage(err, `invalid model "${model.id}": ${err.message}`)
-      handleError(err)
-    }
-  })
+  validateReferences({ models })
 }
