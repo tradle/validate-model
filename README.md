@@ -30,7 +30,7 @@ try {
 // validate all models and their cross-references
 try {
   const models = baseModels.concat(myModels)
-  validate.models({ models })
+  validate.models(models)
 } catch (err) {
   console.log('uhh, i totally made this mistake on purpose:', err)
 }
