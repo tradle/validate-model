@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "validate models and resources",
   "main": "index.js",
+  "bin": "./cmd.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/tradle/validate"
@@ -18,11 +19,13 @@
     "test"
   ],
   "devDependencies": {
+    "@tradle/models": "https://github.com/tradle/models",
     "eslint": "^3.15.0",
     "pre-commit": "^1.2.2",
     "tape": "^4.6.3"
   },
   "dependencies": {
+    "object.omit": "^2.0.1",
     "object.pick": "^1.2.0",
     "typeforce": "^1.10.6"
   }
