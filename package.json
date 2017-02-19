@@ -1,12 +1,12 @@
 {
-  "name": "@tradle/validate",
+  "name": "@tradle/validate-model",
   "version": "1.0.0",
-  "description": "validate models and resources",
+  "description": "validate models for your Tradle bot",
   "main": "index.js",
   "bin": "./cmd.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tradle/validate"
+    "url": "https://github.com/tradle/validate-model"
   },
   "author": "mvayngrib",
   "license": "MIT",

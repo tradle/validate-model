@@ -1,6 +1,6 @@
 
 const test = require('tape')
-const validate = require('../').models.property
+const validate = require('../').property
 const broken = [
   {
     model: {

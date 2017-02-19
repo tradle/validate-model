@@ -1,6 +1,6 @@
 
 const test = require('tape')
-const validate = require('../').models.refs
+const validate = require('../').refs
 
 const base = [
   {
