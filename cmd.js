@@ -3,5 +3,5 @@
 const path = require('path')
 const baseModels = require('@tradle/models')
 const custom = require(path.resolve(process.cwd(), process.argv[2]))
-const validate = require('./').models
+const validate = require('./')
 validate(baseModels.concat(custom))
