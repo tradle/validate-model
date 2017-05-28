@@ -1,6 +1,7 @@
 
 const test = require('tape')
-const validate = require('../').refs
+const validate = require('../')
+const DEFAULT_MODELS = require('@tradle/models')
 
 const base = [
   {
@@ -75,7 +76,7 @@ const invalid = bad.map(item => {
 
 test('invalid references', function (t) {
   invalid.forEach(item => {
-    t.throws(() => validate({
+    t.throws(() => validate.refs({
       models: item.models,
       model: item.model
     }), item.error)
@@ -86,7 +87,7 @@ test('invalid references', function (t) {
 
 test('valid references', function (t) {
   good.forEach(model => {
-    t.doesNotThrow(() => validate({
+    t.doesNotThrow(() => validate.refs({
       models: all,
       model
     }))
@@ -94,3 +95,43 @@ test('valid references', function (t) {
 
   t.end()
 })
+
+test('get references', function (t) {
+  const direct = validate.refs.getDirectReferences(DEFAULT_MODELS['tradle.EmployeeOnboarding'])
+    .sort(alphabetical)
+
+  t.same(direct, [
+    'tradle.FinancialProduct',
+    'tradle.Identity',
+    'tradle.Message',
+    'tradle.Name'
+  ])
+
+  const subset = [
+    'tradle.EmployeeOnboarding',
+    'tradle.AssignRelationshipManager'
+  ]
+
+  const recursive = validate.refs.getReferences({ models: DEFAULT_MODELS, subset })
+    .sort(alphabetical)
+
+  t.same(recursive, [
+    'tradle.Country',
+    'tradle.Enum',
+    'tradle.FinancialProduct',
+    'tradle.Form',
+    'tradle.Identity',
+    'tradle.Message',
+    'tradle.Name',
+    'tradle.Organization',
+    'tradle.ProductApplication',
+  ])
+
+  t.end()
+})
+
+function alphabetical (a, b) {
+  if (a < b) return -1
+  if (a > b) return 1
+  return 0
+}
