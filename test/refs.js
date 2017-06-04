@@ -117,14 +117,23 @@ test('get references', function (t) {
 
   t.same(recursive, [
     'tradle.Country',
+    'tradle.Document',
     'tradle.Enum',
     'tradle.FinancialProduct',
     'tradle.Form',
     'tradle.Identity',
+    'tradle.Language',
     'tradle.Message',
+    'tradle.Method',
+    'tradle.MyProduct',
     'tradle.Name',
     'tradle.Organization',
+    'tradle.Photo',
     'tradle.ProductApplication',
+    'tradle.Profile',
+    'tradle.SecurityCode',
+    'tradle.Verification',
+    'tradle.WebSite'
   ])
 
   t.end()
