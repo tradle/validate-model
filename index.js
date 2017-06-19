@@ -10,7 +10,12 @@ exports.property = validateProperty
 
 function validate (models) {
   if (!Array.isArray(models)) {
-    return validateModel(models)
+    if (isModel(models)) {
+      return validateModel(models)
+    }
+
+    // convert to array
+    models = Object.keys(models).map(id => models[id])
   }
 
   models.forEach(model => {
@@ -23,4 +28,10 @@ function validate (models) {
   })
 
   validateReferences({ models })
+}
+
+function isModel (obj) {
+  return obj.type === 'tradle.Model' &&
+    (obj.properties && typeof obj.properties === 'object') &&
+    typeof obj.id === 'string'
 }

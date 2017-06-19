@@ -139,6 +139,23 @@ test('get references', function (t) {
   t.end()
 })
 
+test('input map / array', function (t) {
+  t.throws(() => validate(base.concat(bad)))
+  t.throws(() => validate(toObject(base.concat(bad))))
+  t.doesNotThrow(() => validate(DEFAULT_MODELS))
+  t.doesNotThrow(() => validate(toObject(DEFAULT_MODELS)))
+  t.end()
+})
+
+function toObject (models) {
+  const obj = {}
+  for (let model of models) {
+    obj[model.id] = model
+  }
+
+  return obj
+}
+
 function alphabetical (a, b) {
   if (a < b) return -1
   if (a > b) return 1
