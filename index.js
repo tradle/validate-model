@@ -1,12 +1,14 @@
 const validateModel = require('./lib/model')
 const validateReferences = require('./lib/refs')
 const validateProperty = require('./lib/property')
-const { updateErrorWithMessage, handleError } = require('./lib/utils')
+const utils = require('./lib/utils')
+const { updateErrorWithMessage, handleError } = utils
 
 exports = module.exports = validate
 exports.model = validateModel
 exports.refs = validateReferences
 exports.property = validateProperty
+exports.utils = utils
 
 function validate (models) {
   if (!Array.isArray(models)) {
