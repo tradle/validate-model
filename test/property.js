@@ -33,6 +33,33 @@ const broken = [
     },
     propertyName: 'name',
     error: /range/
+  },
+  {
+    model: {
+      properties: {
+        firstName: {
+          type: 'string'
+        },
+        middleName: {
+          type: 'string'
+        },
+        names: {
+          type: 'string',
+          group: [
+            'firstName',
+            'otherNames'
+          ]
+        },
+        otherNames: {
+          type: 'string',
+          group: [
+            'middleName'
+          ]
+        }
+      }
+    },
+    propertyName: 'names',
+    error: /nested/
   }
 ]
 
