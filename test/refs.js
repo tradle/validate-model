@@ -100,9 +100,9 @@ test('get references', function (t) {
   const direct = validate.refs.getDirectReferences(DEFAULT_MODELS['tradle.EmployeeOnboarding'])
     .sort(alphabetical)
 
-  t.same(direct.sort(), [
-    'tradle.ChatItem',
+  t.same(direct, [
     'tradle.FinancialProduct',
+    'tradle.Message',
     'tradle.Name'
   ])
 
@@ -114,8 +114,7 @@ test('get references', function (t) {
   const recursive = validate.refs.getReferences({ models: DEFAULT_MODELS, subset })
     .sort(alphabetical)
 
-  t.same(recursive.sort(), [
-    'tradle.ChatItem',
+  t.same(recursive, [
     'tradle.Country',
     'tradle.Document',
     'tradle.Enum',
@@ -123,6 +122,7 @@ test('get references', function (t) {
     'tradle.Form',
     'tradle.Identity',
     'tradle.Language',
+    'tradle.Message',
     'tradle.Method',
     'tradle.MyProduct',
     'tradle.Name',

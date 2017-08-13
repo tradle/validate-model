@@ -4,11 +4,29 @@
 
 "@tradle/models@https://github.com/tradle/models":
   version "4.10.10"
-  resolved "https://github.com/tradle/models#db823088a672162b4752c05495fd36b0b1dd5ca6"
+  resolved "https://github.com/tradle/models#c628f9be404957cf6bf028e73c5c8834dad5398e"
   dependencies:
     minimist "^1.2.0"
     typeforce "^1.10.6"
     write-file-atomic "^1.1.4"
+
+"@tradle/models@https://github.com/tradle/models#c3cca09":
+  version "4.10.10"
+  resolved "https://github.com/tradle/models#c3cca09"
+  dependencies:
+    "@tradle/validate-model" "github:tradle/validate#a25543d"
+    minimist "^1.2.0"
+    typeforce "^1.10.6"
+    write-file-atomic "^1.1.4"
+
+"@tradle/validate-model@github:tradle/validate#a25543d":
+  version "1.0.0"
+  resolved "https://codeload.github.com/tradle/validate/tar.gz/a25543d"
+  dependencies:
+    object.omit "^2.0.1"
+    object.pick "^1.2.0"
+    typeforce "^1.10.6"
+    xtend "^4.0.1"
 
 acorn-jsx@^3.0.0:
   version "3.0.1"
