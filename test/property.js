@@ -60,7 +60,19 @@ const broken = [
     },
     propertyName: 'names',
     error: /nested/
-  }
+  },
+  {
+    model: {
+      properties: {
+        name: {
+          type: 'string',
+          sample: 8
+        }
+      }
+    },
+    propertyName: 'name',
+    error: /string or object/
+  },
 ]
 
 const valid = [
