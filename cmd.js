@@ -1,7 +1,23 @@
 #!/usr/bin/env node
 
 const path = require('path')
-const baseModels = require('@tradle/models')
-const custom = require(path.resolve(process.cwd(), process.argv[2]))
-const validate = require('./')
-validate(baseModels.concat(custom))
+const argv = require('minimist')(process.argv.slice(2), {
+  default: {
+    'depends-on': ['@tradle/models']
+  }
+})
+
+const pathToModels = path.resolve(process.cwd(), process.argv[2])
+const custom = require(pathToModels)
+const merger = require('@tradle/merge-models')
+const merge = merger()
+
+console.log('validating model set:')
+;[].concat(argv['depends-on']).forEach(dep => {
+  console.log(`adding dependency: ${dep}`)
+  merge.add(require(dep), { validate: true })
+})
+
+console.log(`adding custom set: ${pathToModels}`)
+merge.add(custom)
+merge.get()

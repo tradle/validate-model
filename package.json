@@ -25,6 +25,8 @@
     "tape": "^4.6.3"
   },
   "dependencies": {
+    "@tradle/merge-models": "^2.0.0",
+    "minimist": "^1.2.0",
     "object.omit": "^2.0.1",
     "object.pick": "^1.2.0",
     "typeforce": "^1.10.6",
