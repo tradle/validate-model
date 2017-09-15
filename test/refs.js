@@ -115,6 +115,7 @@ test('get references', function (t) {
     .sort(alphabetical)
 
   t.same(recursive, [
+    'tradle.Application',
     'tradle.Country',
     'tradle.Document',
     'tradle.Enum',
@@ -128,7 +129,6 @@ test('get references', function (t) {
     'tradle.Name',
     'tradle.Organization',
     'tradle.Photo',
-    'tradle.ProductApplication',
     'tradle.Profile',
     'tradle.SecurityCode',
     'tradle.Verification',
