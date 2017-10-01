@@ -12,6 +12,34 @@ const broken = [
       id: 4
     },
     error: /\"id\"/
+  },
+  {
+    model: {
+      type: 'tradle.Model',
+      id: 'mymodel',
+      title: 'My model',
+      interfaces: [
+        'tradle.Context'
+      ],
+      properties: {}
+    },
+    error: /contextId/
+  },
+  {
+    model: {
+      type: 'tradle.Model',
+      id: 'mymodel',
+      title: 'My model',
+      interfaces: [
+        'tradle.Context'
+      ],
+      properties: {
+        contextId: {
+          type: 'number'
+        }
+      }
+    },
+    error: /contextId/
   }
 ]
 
