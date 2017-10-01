@@ -130,6 +130,7 @@ test('get references', function (t) {
     'tradle.Organization',
     'tradle.Photo',
     'tradle.Profile',
+    'tradle.PubKey',
     'tradle.SecurityCode',
     'tradle.Verification',
     'tradle.WebSite'
