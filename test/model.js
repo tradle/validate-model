@@ -11,7 +11,7 @@ const broken = [
       type: 'tradle.Model',
       id: 4
     },
-    error: /\"id\"/
+    error: /model id/
   },
   {
     model: {
