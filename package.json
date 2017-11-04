@@ -18,6 +18,9 @@
     "lint",
     "test"
   ],
+  "peerDependencies": {
+    "@tradle/models": "*"
+  },
   "devDependencies": {
     "@tradle/models": "https://github.com/tradle/models",
     "eslint": "^3.15.0",
@@ -26,6 +29,7 @@
   },
   "dependencies": {
     "@tradle/merge-models": "^2.0.0",
+    "deep-equal": "^1.0.1",
     "minimist": "^1.2.0",
     "object.omit": "^2.0.1",
     "object.pick": "^1.2.0",
