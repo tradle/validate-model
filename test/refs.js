@@ -1,7 +1,7 @@
 
 const test = require('tape')
 const validate = require('../')
-const DEFAULT_MODELS = require('@tradle/models')
+const DEFAULT_MODELS = require('@tradle/models').models
 
 const base = [
   {
@@ -102,7 +102,6 @@ test('get references', function (t) {
 
   t.same(direct, [
     'tradle.FinancialProduct',
-    'tradle.Message',
     'tradle.Name'
   ])
 
@@ -123,7 +122,6 @@ test('get references', function (t) {
     'tradle.Form',
     'tradle.Identity',
     'tradle.Language',
-    'tradle.Message',
     'tradle.Method',
     'tradle.MyProduct',
     'tradle.Name',
@@ -133,6 +131,7 @@ test('get references', function (t) {
     'tradle.PubKey',
     'tradle.SecurityCode',
     'tradle.Verification',
+    'tradle.VerifiedItem',
     'tradle.WebSite'
   ])
 
@@ -143,9 +142,13 @@ test('input map / array', function (t) {
   t.throws(() => validate(base.concat(bad)))
   t.throws(() => validate(toObject(base.concat(bad))))
   t.doesNotThrow(() => validate(DEFAULT_MODELS))
-  t.doesNotThrow(() => validate(toObject(DEFAULT_MODELS)))
+  t.doesNotThrow(() => validate(toArray(DEFAULT_MODELS)))
   t.end()
 })
+
+function toArray (models) {
+  return Object.keys(models).map(id => models[id])
+}
 
 function toObject (models) {
   const obj = {}

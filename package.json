@@ -1,6 +1,6 @@
 {
   "name": "@tradle/validate-model",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "validate models for your Tradle bot",
   "main": "index.js",
   "bin": "./cmd.js",
@@ -22,7 +22,7 @@
     "@tradle/models": "*"
   },
   "devDependencies": {
-    "@tradle/models": "https://github.com/tradle/models",
+    "@tradle/models": "github:tradle/models",
     "eslint": "^3.15.0",
     "pre-commit": "^1.2.2",
     "tape": "^4.6.3"

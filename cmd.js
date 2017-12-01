@@ -15,7 +15,8 @@ const merge = merger()
 console.log('validating model set:')
 ;[].concat(argv['depends-on']).forEach(dep => {
   console.log(`adding dependency: ${dep}`)
-  merge.add(require(dep), { validate: true })
+  const depModule = require(dep)
+  merge.add(depModule.models || depModule, { validate: true })
 })
 
 console.log(`adding custom set: ${pathToModels}`)
