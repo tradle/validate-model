@@ -18,6 +18,22 @@ const base = [
         type: 'string'
       }
     }
+  },
+  {
+    id: 'colorsenum',
+    type: 'tradle.Model',
+    subClassOf: 'tradle.Enum',
+    properties: {
+      color: {
+        type: 'string'
+      }
+    },
+    enum: [
+      { id: 'red', title: 'Red' },
+      { id: 'green', title: 'Green' },
+      { id: 'blue', title: 'Blue' },
+      { id: 'white', title: 'White' },
+    ]
   }
 ]
 
@@ -31,7 +47,24 @@ const good = [
         ref: 'baseempty'
       }
     }
-  }
+  },
+  {
+    id: 'good2',
+    type: 'tradle.Model',
+    properties: {
+      a: {
+        type: 'object',
+        ref: 'colorsenum',
+        limit: [
+          'red',
+          'colorsenum_red'
+        ],
+        pin: [
+          { id: 'colorsenum_red' }
+        ]
+      }
+    }
+  },
 ]
 
 const bad = [
@@ -60,6 +93,22 @@ const bad = [
       }
     },
     error: /non-existent/
+  },
+  {
+    model: {
+      id: 'bad3',
+      type: 'tradle.Model',
+      properties: {
+        a: {
+          type: 'object',
+          ref: 'colorsenum',
+          limit: [
+            'Borg'
+          ]
+        }
+      }
+    },
+    error: /limit/
   }
 ]
 
