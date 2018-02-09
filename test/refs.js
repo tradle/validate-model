@@ -164,6 +164,7 @@ test('get references', function (t) {
 
   t.same(recursive, [
     'tradle.Application',
+    'tradle.Check',
     'tradle.Country',
     'tradle.Document',
     'tradle.Enum',

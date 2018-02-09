@@ -22,6 +22,7 @@
     "@tradle/models": "*"
   },
   "devDependencies": {
+    "@tradle/custom-models": "github:tradle/custom-models",
     "@tradle/models": "github:tradle/models",
     "eslint": "^3.15.0",
     "pre-commit": "^1.2.2",
