@@ -29,6 +29,7 @@
     "tape": "^4.6.3"
   },
   "dependencies": {
+    "@tradle/constants": "^2.1.0",
     "@tradle/merge-models": "^2.0.0",
     "lodash": "^4.0.0",
     "minimist": "^1.2.0",
