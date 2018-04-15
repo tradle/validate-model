@@ -9,6 +9,8 @@ exports.model = validateModel
 exports.refs = validateReferences
 exports.property = validateProperty
 exports.utils = utils
+exports.StubModel = require('./lib/stub-model')
+exports.ObjectModel = require('./lib/object-model')
 
 function validate (models) {
   if (!Array.isArray(models)) {
