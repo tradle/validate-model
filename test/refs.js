@@ -1,6 +1,7 @@
 
 const test = require('tape')
 const validate = require('../')
+const { utils } = validate
 const DEFAULT_MODELS = require('@tradle/models').models
 
 const base = [
@@ -180,6 +181,7 @@ test('get references', function (t) {
     'tradle.Profile',
     'tradle.PubKey',
     'tradle.SecurityCode',
+    'tradle.Status',
     'tradle.Verification',
     'tradle.VerifiedItem',
     'tradle.WebSite'
@@ -193,6 +195,16 @@ test('input map / array', function (t) {
   t.throws(() => validate(toObject(base.concat(bad))))
   t.doesNotThrow(() => validate(DEFAULT_MODELS))
   t.doesNotThrow(() => validate(toArray(DEFAULT_MODELS)))
+  t.end()
+})
+
+test('utils', function (t) {
+  t.equal(utils.getCorrespondingBacklink({
+    models: DEFAULT_MODELS,
+    model: DEFAULT_MODELS['tradle.Check'],
+    forward: 'application'
+  }), 'checks')
+
   t.end()
 })
 
