@@ -165,6 +165,7 @@ test('get references', function (t) {
 
   t.same(recursive, [
     'tradle.Application',
+    'tradle.ApplicationSubmission',
     'tradle.Check',
     'tradle.Country',
     'tradle.Document',
@@ -172,18 +173,20 @@ test('get references', function (t) {
     'tradle.FinancialProduct',
     'tradle.Form',
     'tradle.Identity',
+    'tradle.Intersection',
     'tradle.Language',
     'tradle.Method',
     'tradle.MyProduct',
     'tradle.Name',
+    'tradle.Object',
     'tradle.Organization',
     'tradle.Photo',
     'tradle.Profile',
     'tradle.PubKey',
+    'tradle.Seal',
     'tradle.SecurityCode',
     'tradle.Status',
     'tradle.Verification',
-    'tradle.VerifiedItem',
     'tradle.WebSite'
   ])
 
