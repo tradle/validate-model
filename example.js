@@ -1,13 +1,5 @@
-
-# @tradle/validate
-
-validate your Tradle models
-
-## Usage
-
-```js
 const baseModels = require('@tradle/models').models
-const validate = require('@tradle/validate-model')
+const validate = require('./')
 const nameModel = {
   type: 'tradle.Model',
   id: 'com.example.Name',
@@ -32,4 +24,3 @@ validate.model(nameModel)
 // validate all models and their cross-references
 const mergedModels = Object.assign({}, baseModels, { [nameModel.id]: nameModel })
 validate(mergedModels)
-```
