@@ -3,6 +3,7 @@ const test = require('tape')
 const validate = require('../')
 const { utils } = validate
 const DEFAULT_MODELS = require('@tradle/models').models
+const TEST_MODELS = require('./test-models.json') // tradle/models#a3670fa
 
 const base = [
   {
@@ -147,7 +148,7 @@ test('valid references', function (t) {
 })
 
 test('get references', function (t) {
-  const direct = validate.refs.getDirectReferences(DEFAULT_MODELS['tradle.EmployeeOnboarding'])
+  const direct = validate.refs.getDirectReferences(TEST_MODELS['tradle.EmployeeOnboarding'])
     .sort(alphabetical)
 
   t.same(direct, [
@@ -160,8 +161,11 @@ test('get references', function (t) {
     'tradle.AssignRelationshipManager'
   ]
 
-  const recursive = validate.refs.getReferences({ models: DEFAULT_MODELS, subset })
-    .sort(alphabetical)
+  const recursive = validate.refs.getReferences({
+    models: TEST_MODELS,
+    subset
+  })
+  .sort(alphabetical)
 
   t.same(recursive, [
     'tradle.Application',
