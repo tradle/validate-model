@@ -1,6 +1,6 @@
 {
   "name": "@tradle/validate-model",
-  "version": "7.1.5",
+  "version": "7.1.6",
   "description": "validate models for your Tradle bot",
   "main": "index.js",
   "bin": "./cmd.js",
