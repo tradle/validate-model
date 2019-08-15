@@ -37,6 +37,21 @@ const broken = [
   {
     model: {
       properties: {
+        names: {
+          type: 'string',
+          group: [
+            'firstName',
+            'otherNames'
+          ]
+        }
+      }
+    },
+    propertyName: 'names',
+    error: /displayAs/
+  },
+  {
+    model: {
+      properties: {
         firstName: {
           type: 'string'
         },
@@ -45,6 +60,7 @@ const broken = [
         },
         names: {
           type: 'string',
+          displayAs: '{1} {2}',
           group: [
             'firstName',
             'otherNames'
