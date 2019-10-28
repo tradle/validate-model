@@ -26,6 +26,20 @@ const broken = [
     model: {
       properties: {
         name: {
+          type: 'object',
+          ref: 'tradle.File',
+          dataBundle: true,
+          range: 'json'
+        }
+      }
+    },
+    propertyName: 'name',
+    error: /range/
+  },
+  {
+    model: {
+      properties: {
+        name: {
           type: 'string',
           range: 'object'
         }
