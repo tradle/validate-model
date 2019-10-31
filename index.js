@@ -24,7 +24,7 @@ function validate (models) {
 
   models.forEach(model => {
     try {
-      validateModel(model, models)
+      validateModel(model)
     } catch (err) {
       err = updateErrorWithMessage(err, `invalid model "${model.id}": ${err.message}`)
       handleError(err)
