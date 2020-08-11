@@ -40,6 +40,23 @@ const broken = [
     model: {
       properties: {
         name: {
+          type: 'object',
+          ref: 'tradle.Photo',
+          dataBundle: true,
+          allowedMimeTypes: [
+            'image/*',
+            'application/pdff'
+          ],
+        }
+      }
+    },
+    propertyName: 'name',
+    error: /allowedMimeTypes/
+  },
+  {
+    model: {
+      properties: {
+        name: {
           type: 'string',
           range: 'object'
         }
@@ -48,6 +65,19 @@ const broken = [
     propertyName: 'name',
     error: /range/
   },
+  {
+    model: {
+      properties: {
+        name: {
+          type: 'string',
+          allowedMimeTypes: 'image/*',
+        }
+      }
+    },
+    propertyName: 'name',
+    error: /allowedMimeTypes/
+  },
+
   {
     model: {
       properties: {
@@ -105,8 +135,7 @@ const broken = [
   },
 ]
 
-const valid = [
-]
+const valid = []
 
 test('validate prop', function (t) {
   broken.forEach(bad => {
