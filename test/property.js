@@ -5,6 +5,18 @@ const broken = [
   {
     model: {
       properties: {
+        name: {
+          type: 'number',
+          numberFormat: '222'
+        }
+      }
+    },
+    propertyName: 'name',
+    error: /numberFormat/
+  },
+  {
+    model: {
+      properties: {
         name: {}
       }
     },
