@@ -12,6 +12,17 @@ const base = [
     properties: {}
   },
   {
+    id: 'baseEnum',
+    type: 'tradle.Model',
+    properties: {
+      base: 'string'
+    },
+    enum: {
+      id: 'b1',
+      title: 'b1'
+    }
+  },
+  {
     id: 'baseinterface',
     isInterface: true,
     type: 'tradle.Model',
@@ -67,6 +78,17 @@ const good = [
       }
     }
   },
+  {
+    id: 'good3',
+    type: 'tradle.Model',
+    properties: {
+      a: {
+        type: 'object',
+        ref: 'baseEnum',
+        set: 'b1'
+      }
+    }
+  }
 ]
 
 const bad = [
@@ -111,7 +133,21 @@ const bad = [
       }
     },
     error: /limit/
-  }
+  },
+  {
+    model: {
+      id: 'bad4',
+      type: 'tradle.Model',
+      properties: {
+        a: {
+          type: 'object',
+          set: '2',
+          ref: 'baseempty'
+        }
+      }
+    },
+    error: /set/
+  },
 ]
 
 const all = base.concat(good)

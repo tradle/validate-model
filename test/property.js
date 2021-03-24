@@ -145,6 +145,30 @@ const broken = [
     propertyName: 'name',
     error: /string or object/
   },
+  {
+    model: {
+      properties: {
+        name: {
+          type: 'array',
+          set: '2'
+        }
+      }
+    },
+    propertyName: 'name',
+    error: /set/
+  },
+  {
+    model: {
+      properties: {
+        name: {
+          type: 'object',
+          set: 'age'
+        }
+      }
+    },
+    propertyName: 'name',
+    error: /set/
+  }
 ]
 
 const valid = []
