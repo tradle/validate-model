@@ -45,7 +45,7 @@ const base = [
       { id: 'red', title: 'Red' },
       { id: 'green', title: 'Green' },
       { id: 'blue', title: 'Blue' },
-      { id: 'white', title: 'White' },
+      { id: 'white', title: 'White' }
     ]
   }
 ]
@@ -147,11 +147,11 @@ const bad = [
       }
     },
     error: /set/
-  },
+  }
 ]
 
 const all = base.concat(good)
-                .concat(bad.map(item => item.model))
+  .concat(bad.map(item => item.model))
 
 const invalid = bad.map(item => {
   return {
@@ -201,7 +201,7 @@ test('get references', function (t) {
     models: TEST_MODELS,
     subset
   })
-  .sort(alphabetical)
+    .sort(alphabetical)
 
   t.same(recursive, [
     'tradle.Application',
@@ -257,7 +257,7 @@ function toArray (models) {
 
 function toObject (models) {
   const obj = {}
-  for (let model of models) {
+  for (const model of models) {
     obj[model.id] = model
   }
 

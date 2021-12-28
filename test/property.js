@@ -58,7 +58,7 @@ const broken = [
           allowedMimeTypes: [
             'image/*',
             'application/pdff'
-          ],
+          ]
         }
       }
     },
@@ -82,7 +82,7 @@ const broken = [
       properties: {
         name: {
           type: 'string',
-          allowedMimeTypes: 'image/*',
+          allowedMimeTypes: 'image/*'
         }
       }
     },
