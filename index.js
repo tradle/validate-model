@@ -26,8 +26,9 @@ function validate (models) {
     try {
       validateModel(model)
     } catch (err) {
-      err = updateErrorWithMessage(err, `invalid model "${model.id}": ${err.message}`)
-      handleError(err)
+      handleError(
+        updateErrorWithMessage(err, `invalid model "${model.id}": ${err.message}`)
+      )
     }
   })
 

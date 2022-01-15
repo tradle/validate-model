@@ -4,7 +4,7 @@ const validate = require('../').model
 const broken = [
   {
     model: {},
-    error: /\"type\"/
+    error: /"type"/
   },
   {
     model: {

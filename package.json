@@ -1,9 +1,9 @@
 {
   "name": "@tradle/validate-model",
-  "version": "7.1.33",
+  "version": "7.1.35",
   "description": "validate models for your Tradle bot",
   "main": "index.js",
-  "bin": "./cmd.js",
+  "bin": "bin/validate-model",
   "repository": {
     "type": "git",
     "url": "https://github.com/tradle/validate-model"
@@ -11,8 +11,9 @@
   "author": "mvayngrib",
   "license": "MIT",
   "scripts": {
-    "test": "node test",
-    "lint": "eslint --quiet ."
+    "test": "npm run lint && npm run unit",
+    "unit": "tape test/index.js",
+    "lint": "standard"
   },
   "pre-commit": [
     "lint",
@@ -24,16 +25,16 @@
   "devDependencies": {
     "@tradle/custom-models": "github:tradle/custom-models",
     "@tradle/models": "github:tradle/models",
-    "eslint": "^3.15.0",
     "pre-commit": "^1.2.2",
-    "tape": "^4.6.3"
+    "standard": "^16.0.4",
+    "tape": "^5.3.2"
   },
   "dependencies": {
-    "@tradle/constants": "^2.1.0",
-    "@tradle/merge-models": "^2.0.0",
-    "lodash": "^4.17.19",
-    "mime": "^2.4.6",
-    "minimist": "^1.2.0",
+    "@tradle/constants": "^2.5.1",
+    "@tradle/merge-models": "^3.0.0",
+    "lodash": "^4.17.21",
+    "mime": "^3.0.0",
+    "minimist": "^1.2.5",
     "typeforce": "^1.10.6"
   }
 }
