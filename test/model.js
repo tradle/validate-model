@@ -18,6 +18,23 @@ const broken = [
       type: 'tradle.Model',
       id: 'mymodel',
       title: 'My model',
+      allow: {
+        edit: 'w',
+        create: {
+          vendor: {
+            admin: true
+          }
+        }
+      },
+      properties: {}
+    },
+    error: /allow/
+  },
+  {
+    model: {
+      type: 'tradle.Model',
+      id: 'mymodel',
+      title: 'My model',
       interfaces: [
         'tradle.Context'
       ],

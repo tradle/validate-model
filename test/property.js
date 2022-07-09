@@ -17,6 +17,25 @@ const broken = [
   {
     model: {
       properties: {
+        name: {
+          type: 'number',
+          allow: {
+            edit: 'w',
+            create: {
+              vendor: {
+                admin: true
+              }
+            }
+          },
+        }
+      }
+    },
+    propertyName: 'name',
+    error: /allow/
+  },
+  {
+    model: {
+      properties: {
         name: {}
       }
     },
